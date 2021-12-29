@@ -1,0 +1,19 @@
+image: rvancea/maven-chrome-jdk8:latest
+
+build-job:
+  stage: build
+  script:
+    - cd Presentables/"license plate recognition"
+    - mvn clean package
+
+test-job1:
+  stage: test
+  script:
+    - cd Presentables/"license plate recognition"
+    - mvn test
+
+sonarqube:
+  stage: test
+  script: 
+   - cd Presentables/"license plate recognition"
+   - echo "sonarqube stage"
